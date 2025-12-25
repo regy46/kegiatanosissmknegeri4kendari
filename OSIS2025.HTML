@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website OSIS</title>
+    <link rel="stylesheet" href="osis.css">
+</head>
+<body>
+    <div id="login" class="container">
+        <h2>Masuk ke website OSIS </h2>
+        <input type="password" id="password" placeholder="Masukkan Kata Sandi">
+        <button onclick="checkPassword()">Masuk</button>
+        <p id="error">Kata sandi salah!</p>
+    </div>
+
+    <div id="home" class="container hidden">
+        <h2>Selamat Datang di Halaman Beranda OSIS</h2>
+        <div class="activities">
+            <div class="activity">
+                <img src="1010.jpeg" alt="Kegiatan 1">
+                <h3>Kegiatan : Hari Guru</h3>
+                <div class="date">Tanggal: 26 November 2025</div>
+                <p>Deskripsi: Kegiatan mencakup pengibaran bendera Merah Putih, menyanyikan lagu "Hymne Guru", serta amanat pembina upacara yang biasanya berisi pesan inspiratif tentang pentingnya pendidikan.</p>
+            </div>
+            <div class="activity">
+                <img src="VESTAS.jpeg" alt="Kegiatan 2">
+                <h3>Kegiatan : Ulang tahun sekolah</h3>
+                <div class="date">Tanggal: 25 November 2025</div>
+                <p>Deskripsi: Kompetisi olahraga antar kelas yang melibatkan berbagai cabang seperti sepak bola, basket, dan atletik. Acara ini bertujuan untuk meningkatkan semangat kebersamaan dan kesehatan siswa.</p>
+            </div>
+            <div class="activity">
+                <img src="https://via.placeholder.com/300x150/4a4a4a/ffffff?text=Kegiatan+3" alt="Kegiatan 3">
+                <h3>Kegiatan 3: Seminar Pendidikan</h3>
+                <div class="date">Tanggal: 5 Desember 2023</div>
+                <p>Deskripsi: Seminar dengan tema "Masa Depan Pendidikan di Era Digital". Narasumber dari universitas akan berbagi wawasan tentang teknologi dalam pembelajaran dan persiapan karir siswa.</p>
+            </div>
+        </div>
+        <button onclick="logout()" style="margin-top: 20px;">Keluar</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'OSIS2025') {
+                document.getElementById('login').classList.add('hidden');
+                document.getElementById('home').classList.remove('hidden');
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        function logout() {
+            document.getElementById('home').classList.add('hidden');
+            document.getElementById('login').classList.remove('hidden');
+            document.getElementById('password').value = '';
+            document.getElementById('error').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
